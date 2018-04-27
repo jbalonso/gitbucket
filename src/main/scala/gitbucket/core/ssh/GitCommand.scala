@@ -20,8 +20,8 @@ import org.apache.sshd.server.shell.UnknownCommand
 import org.eclipse.jgit.errors.RepositoryNotFoundException
 
 object GitCommand {
-  val DefaultCommandRegex = """\Agit-(upload|receive)-pack '/([a-zA-Z0-9\-_.]+)/([a-zA-Z0-9\-\+_.]+).git'\Z""".r
-  val SimpleCommandRegex = """\Agit-(upload|receive)-pack '/(.+\.git)'\Z""".r
+  val DefaultCommandRegex = """\Agit-(upload|receive)-pack '/?([a-zA-Z0-9\-_.]+)/([a-zA-Z0-9\-\+_.]+).git'\Z""".r
+  val SimpleCommandRegex = """\Agit-(upload|receive)-pack '/?(.+\.git)'\Z""".r
 }
 
 abstract class GitCommand extends Command with SessionAware {
